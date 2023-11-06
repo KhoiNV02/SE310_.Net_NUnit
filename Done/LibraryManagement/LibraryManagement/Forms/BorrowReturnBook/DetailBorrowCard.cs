@@ -84,7 +84,7 @@ namespace LibraryManagement.Forms
 
             btnDelete.Enabled = btnSave.Enabled = false;
 
-            //dtpBorrowDate.MinDate = DateTime.Today;
+            dtpBorrowDate.MaxDate = DateTime.Today;
 
             Parameters.LoadParam();
             maxDays = Parameters.maxBorrowDays;
@@ -159,8 +159,8 @@ namespace LibraryManagement.Forms
 
         private void btnSave_Click(object sensder, EventArgs e)
         {
-            borrowCard.borrowDate = dtpBorrowDate.Value.ToShortDateString();
-            borrowCard.returnDate = dtpReturnDate.Value.ToShortDateString();
+            borrowCard.borrowDate = dtpBorrowDate.Value.ToString("dd/MM/yyyy");
+            borrowCard.returnDate = dtpReturnDate.Value.ToString("dd/MM/yyyy");
 
             SqlConnection conn = new SqlConnection(DatabaseInfo.connectionString);
             conn.Open();
