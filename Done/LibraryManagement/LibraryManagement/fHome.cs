@@ -147,9 +147,9 @@ namespace LibraryManagement
 
         private void AddMenuButtonsEvent()
         {
-            foreach(Control btn in pnlMenu.Controls)
+            foreach (Control btn in pnlMenu.Controls)
             {
-                if(btn.GetType() == typeof(Button))
+                if (btn.GetType() == typeof(Button))
                 {
                     btn.Click += btnMenuClick_Event;
                     btn.MouseDown += btnMenu_MouseDown;
@@ -276,11 +276,11 @@ namespace LibraryManagement
         private string Translate(string dayOfWeek)
         {
             string trans = "";
-            string[] dayOfWeeks = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+            string[] dayOfWeeks = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
             int index = 0;
-            foreach(string day in dayOfWeeks)
+            foreach (string day in dayOfWeeks)
             {
-                if(dayOfWeek == day)
+                if (dayOfWeek == day)
                 {
                     break;
                 }
@@ -352,7 +352,7 @@ namespace LibraryManagement
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            menuLendReturn.Show(btnSearch, btnSearch.Width, 0);
+            SwitchForm(new BorrowReturnBook());
         }
 
         private void thẻĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
@@ -362,12 +362,12 @@ namespace LibraryManagement
 
         private void mượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SwitchForm(new DemoDesign.LendBook());
+            //SwitchForm(new DemoDesign.LendBook());
         }
 
         private void trảSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SwitchForm(new DemoDesign.RecvBook());
+            //SwitchForm(new DemoDesign.RecvBook());
         }
 
         private void đầuSáchToolStripMenuItem_Click(object sender, EventArgs e)

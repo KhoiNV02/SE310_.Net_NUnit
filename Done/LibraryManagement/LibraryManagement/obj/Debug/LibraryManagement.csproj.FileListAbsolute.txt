@@ -273,3 +273,67 @@ D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324
 D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\Library-Management\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CopyComplete
 D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\Library-Management\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
 D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\Library-Management\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe.config
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.pdb
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.ResolveComReference.cache
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.fHome.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\formdausach.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormLoaiSach.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormNhapSach.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormNhapSach.formCTPN.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormSach.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormTacGia.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\ThayDoiQuyDinh.FormThayDoiQuyDinh.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\TraCuuSach.FormTraCuu.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormLoaiDocGia.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\PhieuThuTien.FormThuTien.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManage.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\DemoDesign.Report.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Icons.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.cache
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CopyComplete
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.CreateBorrowCard.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.CreateReturnCard.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.DetailBorrowCard.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.DetailReturnCard.resources
+C:\Users\Lenovo\Documents\GitHub\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\DemoDesign.BorrowReturnBook.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe.config
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.pdb
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\bin\Debug\FontAwesome.Sharp.dll
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.AssemblyReference.cache
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.SuggestedBindingRedirects.cache
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.ResolveComReference.cache
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.fHome.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\formdausach.Form1.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormLoaiSach.Form1.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormNhapSach.Form1.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormNhapSach.formCTPN.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormSach.Form1.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormTacGia.Form1.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\DemoDesign.BorrowReturnBook.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.CreateBorrowCard.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.CreateReturnCard.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.DetailBorrowCard.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.DetailReturnCard.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\ThayDoiQuyDinh.FormThayDoiQuyDinh.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\TraCuuSach.FormTraCuu.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormLoaiDocGia.Form1.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\PhieuThuTien.FormThuTien.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManage.Form1.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\DemoDesign.Report.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Icons.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.cache
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CopyComplete
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
+D:\Học tập\Tài Liệu học tập đại học- UIT\học kỳ 1 (2023-2324)\Công nghệ .net\New folder\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb

@@ -9,8 +9,8 @@ namespace LibraryManagement.Models
 {
     public class Parameters
     {
-        public static int maxLendDay;
-        public static int maxBorrowBook;
+        public static int maxBorrowDays;
+        public static int maxBorrowBooks;
         public static long finePerDay;
         public Parameters()
         {
@@ -24,8 +24,8 @@ namespace LibraryManagement.Models
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                maxLendDay = (int)reader.GetInt32(4);
-                maxBorrowBook = (int)reader.GetInt32(5);
+                maxBorrowDays = (int)reader.GetInt32(4);
+                maxBorrowBooks = (int)reader.GetInt32(5);
                 finePerDay = (long)reader.GetSqlMoney(6);
             }
         }

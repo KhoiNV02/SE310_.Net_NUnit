@@ -145,6 +145,36 @@
     <Compile Include="Forms\BookManagement\fTacGia.designer.cs">
       <DependentUpon>fTacGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BorrowReturnBook\BorrowReturnBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\BorrowReturnBook.designer.cs">
+      <DependentUpon>BorrowReturnBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\CreateBorrowCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\CreateBorrowCard.designer.cs">
+      <DependentUpon>CreateBorrowCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\CreateReturnCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\CreateReturnCard.designer.cs">
+      <DependentUpon>CreateReturnCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\DetailBorrowCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\DetailBorrowCard.designer.cs">
+      <DependentUpon>DetailBorrowCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\DetailReturnCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorrowReturnBook\DetailReturnCard.designer.cs">
+      <DependentUpon>DetailReturnCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChangeRules\FormThayDoiQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,79 +205,26 @@
     <Compile Include="Forms\ReaderManagement\fTheDocGia.designer.cs">
       <DependentUpon>fTheDocGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ViewRecvSlip.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewRecvSlip.Designer.cs">
-      <DependentUpon>ViewRecvSlip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ViewDetailRecvSlip.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewDetailRecvSlip.Designer.cs">
-      <DependentUpon>ViewDetailRecvSlip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ViewDetailBorrowSlip.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewDetailBorrowSlip.Designer.cs">
-      <DependentUpon>ViewDetailBorrowSlip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ViewBorrowSlip.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewBorrowSlip.Designer.cs">
-      <DependentUpon>ViewBorrowSlip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ConfirmRecvBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ConfirmRecvBook.Designer.cs">
-      <DependentUpon>ConfirmRecvBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ConfirmLendBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ConfirmLendBook.Designer.cs">
-      <DependentUpon>ConfirmLendBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\LendBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LendBook.Designer.cs">
-      <DependentUpon>LendBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\RecvBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RecvBook.Designer.cs">
-      <DependentUpon>RecvBook.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Report.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\BorrowSlip.cs" />
+    <Compile Include="Models\BorrowCard.cs" />
+    <Compile Include="Models\BorrowedBook.cs" />
     <Compile Include="Models\DatabaseInfo.cs" />
-    <Compile Include="Models\DetailBorrowSlip.cs" />
+    <Compile Include="Models\DetailBorrowCard.cs" />
+    <Compile Include="Models\DetailReturnCard.cs" />
     <Compile Include="Models\MailService.cs" />
     <Compile Include="Models\Parameters.cs" />
     <Compile Include="Models\Reader.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\ReportByCategory.cs" />
     <Compile Include="Models\ReportLate.cs" />
-    <Compile Include="Models\ReturnBook.cs" />
-    <Compile Include="Models\ReturnSlip.cs" />
+    <Compile Include="Models\ReturnCard.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\LendSlip.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\LendSlip.Designer.cs">
-      <DependentUpon>LendSlip.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +246,21 @@
     <EmbeddedResource Include="Forms\BookManagement\fTacGia.resx">
       <DependentUpon>fTacGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorrowReturnBook\BorrowReturnBook.resx">
+      <DependentUpon>BorrowReturnBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorrowReturnBook\CreateBorrowCard.resx">
+      <DependentUpon>CreateBorrowCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorrowReturnBook\CreateReturnCard.resx">
+      <DependentUpon>CreateReturnCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorrowReturnBook\DetailBorrowCard.resx">
+      <DependentUpon>DetailBorrowCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorrowReturnBook\DetailReturnCard.resx">
+      <DependentUpon>DetailReturnCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeRules\FormThayDoiQuyDinh.resx">
       <DependentUpon>FormThayDoiQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,30 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReaderManagement\fTheDocGia.resx">
       <DependentUpon>fTheDocGia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewRecvSlip.resx">
-      <DependentUpon>ViewRecvSlip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewDetailRecvSlip.resx">
-      <DependentUpon>ViewDetailRecvSlip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewDetailBorrowSlip.resx">
-      <DependentUpon>ViewDetailBorrowSlip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewBorrowSlip.resx">
-      <DependentUpon>ViewBorrowSlip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ConfirmRecvBook.resx">
-      <DependentUpon>ConfirmRecvBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ConfirmLendBook.resx">
-      <DependentUpon>ConfirmLendBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LendBook.resx">
-      <DependentUpon>LendBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RecvBook.resx">
-      <DependentUpon>RecvBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
@@ -330,9 +298,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\LendSlip.resx">
-      <DependentUpon>LendSlip.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
