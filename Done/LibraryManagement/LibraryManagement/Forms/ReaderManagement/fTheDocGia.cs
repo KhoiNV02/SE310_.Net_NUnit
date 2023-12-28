@@ -361,8 +361,35 @@ namespace LibraryManage
 
             }
         }
+        public bool DOBValidation(string date)
+        {
+            string query = "SELECT TuoiToiThieu FROM THAMSO ";
+            ketnoi(query);
+            int tuoiMin = Convert.ToInt32(myCommand.ExecuteScalar());
 
-        
+            query = "SELECT TuoiToiDa FROM THAMSO";
+            ketnoi(query);
+            int tuoiMax = Convert.ToInt32(myCommand.ExecuteScalar());
+
+            string[] nam = date.Split('/');
+            int NamSinh = Convert.ToInt32(nam[2]);
+            int tuoi = DateTime.Now.Year - NamSinh;
+
+            if (tuoi < tuoiMin || tuoi > tuoiMax)
+            {
+                return false;
+            }
+            try
+            {
+                DateTime tempDate = new DateTime(NamSinh, Convert.ToInt32(nam[1]), Convert.ToInt32(nam[0]));
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             xuly = 0;
