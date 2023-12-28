@@ -15,7 +15,18 @@ namespace DemoDesign
     public partial class Report : Form
     {
         List<ReportByCategory> reportByCategory;
+        List<ReportByBook> reportByBook;
         List<ReportLate> reportLate;
+        List<ReportByReader> reportByReader;
+
+
+        ReportType reportType = ReportType.Book;
+        enum ReportType
+        {
+            Book,
+            BookType,
+            Reader
+        }
 
         BindingSource binding;
         public Report()
@@ -26,24 +37,25 @@ namespace DemoDesign
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             lbInform.Visible = false;
-            CategoryReport();
         }
 
         private void Report_Load(object sender, EventArgs e)
         {
             reportByCategory = new List<ReportByCategory>();
             reportLate = new List<ReportLate>();
+            reportByBook = new List<ReportByBook>();
+            reportByReader = new List<ReportByReader>();
 
             binding = new BindingSource();
 
             //cbbReportType.SelectedIndex = 0;
             dtp.Value = DateTime.Now;
+            cmbType.SelectedIndex = 0;
             lbTitle.Location = new Point((this.Width - lbTitle.Width) / 2, lbTitle.Location.Y);
         }
 
         private void CategoryReport()
         {
-            ChangeDtgvLayout(1);
            
             reportByCategory.Clear();
 
@@ -89,6 +101,7 @@ namespace DemoDesign
             if(dtgv.Rows.Count != 0)
             {
                 dtgv.SelectedRows[0].Selected = false;
+                lbInform.Visible = false;
             }
             else
             {
@@ -100,8 +113,6 @@ namespace DemoDesign
 
         private void LateReport()
         {
-            ChangeDtgvLayout(2);
-
             reportLate.Clear();
 
             string lateReportCmd = $@"SELECT CTPHIEUMUON.MaCuonSach, TenDauSach, NgMuon
@@ -140,64 +151,106 @@ namespace DemoDesign
                 lbInform.Location = new Point((this.Width - lbInform.Width) / 2, lbInform.Location.Y);
             }
         }
-        private void ChangeDtgvLayout(int i)
+
+        private void ChangeDtgvLayout(ReportType type)
         {
-            if(i == 1)
+            switch (type)
             {
-                if(dtgv.Columns.Count == 5)
-                {
-                    dtgv.Columns.RemoveAt(4);
-                }
-                dtgv.Columns[1].HeaderText = "Tên thể loại";
-                dtgv.Columns[2].HeaderText = "Số lượt mượn";
-                dtgv.Columns[3].HeaderText = "Tỉ lệ";
+                case ReportType.BookType:
+                    for (int i = dtgv.ColumnCount - 1; i > 0; i--)
+                    {
+                        // Xóa cột nếu không phải là cột đầu tiên
+                        dtgv.Columns.RemoveAt(i);
+                    }
 
-                dtgv.Columns[1].Width = 650;
-                dtgv.Columns[2].Width = 224;
-                dtgv.Columns[3].Width = 230;
+                    dtgv.Columns.Add("temp1", "");
+                    dtgv.Columns.Add("temp2", "");
+                    dtgv.Columns.Add("temp3", "");
 
-                dtgv.Columns[1].DataPropertyName = "categoryName";
-                dtgv.Columns[2].DataPropertyName = "numsOfBorrowings";
-                dtgv.Columns[3].DataPropertyName = "rate";
+                    dtgv.Columns[1].HeaderText = "Tên thể loại";
+                    dtgv.Columns[2].HeaderText = "Số lượt mượn";
+                    dtgv.Columns[3].HeaderText = "Tỉ lệ";
 
-                lbTotalBorrowTitle.Visible = true;
-                lbTotalBorrow.Visible = true;
+                    dtgv.Columns[1].Width = 650;
+                    dtgv.Columns[2].Width = 224;
+                    dtgv.Columns[3].Width = 230;
 
-                dtp.CustomFormat = "MM/yyyy";
+                    dtgv.Columns[1].DataPropertyName = "categoryName";
+                    dtgv.Columns[2].DataPropertyName = "numsOfBorrowings";
+                    dtgv.Columns[3].DataPropertyName = "rate";
 
-                lbTitleName.Text = $"Tình Hình Mượn Sách Theo Thể Loại Tháng {dtp.Value.Month.ToString()}";
-            }
-            else
-            {
+                    lbTotalBorrowTitle.Visible = true;
+                    lbTotalBorrow.Visible = true;
 
-                dtgv.Columns[1].HeaderText = "Mã sách";
-                dtgv.Columns[2].HeaderText = "Tên sách";
-                dtgv.Columns[3].HeaderText = "Ngày mượn";
-                if (dtgv.Columns.Count != 5)
-                {
-                    dtgv.Columns.Add("newCol", "Số ngày trả trễ");
-                }
+                    dtp.CustomFormat = "MM/yyyy";
 
-                dtgv.Columns[1].Width = 140;
-                dtgv.Columns[2].Width = 560;
-                dtgv.Columns[3].Width = 180;
-                dtgv.Columns[4].Width = 224;
+                    lbTitleName.Text = $"Thống Kê Theo Thể Loại Tháng {dtp.Value.Month.ToString()}";
+                    break;
 
-                dtgv.Columns[1].DataPropertyName = "bookCode";
-                dtgv.Columns[2].DataPropertyName = "bookName";
-                dtgv.Columns[3].DataPropertyName = "borrowDate";
-                dtgv.Columns[4].DataPropertyName = "lateReturnDays";
+                case ReportType.Book:
+                    for (int i = dtgv.ColumnCount - 1; i > 0; i--)
+                    {
+                        // Xóa cột nếu không phải là cột đầu tiên
+                        dtgv.Columns.RemoveAt(i);
+                    }
+                    dtgv.Columns.Add("temp1", "");
+                    dtgv.Columns.Add("temp2", "");
+                    dtgv.Columns.Add("temp3", "");
 
-                lbTotalBorrowTitle.Visible = false;
-                lbTotalBorrow.Visible = false;
+                    dtgv.Columns[1].HeaderText = "Mã sách";
+                    dtgv.Columns[2].HeaderText = "Tên sách";
+                    dtgv.Columns[3].HeaderText = "Số lượt mượn";
 
-                dtp.CustomFormat = "dd/MM/yyyy";
+                    dtgv.Columns[1].Width = 220;
+                    dtgv.Columns[2].Width = 660;
+                    dtgv.Columns[3].Width = 224;
 
-                lbTitleName.Text = $"Sách Trả Trễ {dtp.Value.ToString("dd/MM/yyyy")}";
-            }
+                    dtgv.Columns[1].DataPropertyName = "bookCode";
+                    dtgv.Columns[2].DataPropertyName = "bookName";
+                    dtgv.Columns[3].DataPropertyName = "numsOfBorrowings";
+
+                    lbTotalBorrowTitle.Visible = true;
+                    lbTotalBorrow.Visible = true;
+
+                    //dtp.CustomFormat = "dd/MM/yyyy";
+
+                    lbTitleName.Text = $"Thống Kê Theo Sách Mượn Tháng {dtp.Value.Month.ToString()}";
+                    break;
+
+                case ReportType.Reader:
+                    for (int i = dtgv.ColumnCount - 1; i > 0; i--)
+                    {
+                        // Xóa cột nếu không phải là cột đầu tiên
+                        dtgv.Columns.RemoveAt(i);
+                    }
+
+                    dtgv.Columns.Add("temp1", "");
+                    dtgv.Columns.Add("temp2", "");
+                    dtgv.Columns.Add("temp3", "");
+
+                    dtgv.Columns[1].HeaderText = "Mã độc giả";
+                    dtgv.Columns[2].HeaderText = "Tên độc giả";
+                    dtgv.Columns[3].HeaderText = "Số lượt mượn";
+
+                    dtgv.Columns[1].Width = 220;
+                    dtgv.Columns[2].Width = 660;
+                    dtgv.Columns[3].Width = 224;
+
+                    dtgv.Columns[1].DataPropertyName = "code";
+                    dtgv.Columns[2].DataPropertyName = "name";
+                    dtgv.Columns[3].DataPropertyName = "numsOfBorrowings";
+
+                    lbTotalBorrowTitle.Visible = true;
+                    lbTotalBorrow.Visible = true;
+
+                    //dtp.CustomFormat = "dd/MM/yyyy";
+
+                    lbTitleName.Text = $"Thống Kê Theo Độc Giả Tháng {dtp.Value.Month.ToString()}";
+                    break;
+            };
+
             lbTitleName.Location = new Point((this.Width - lbTitleName.Width) / 2, lbTitleName.Location.Y);
         }
-
         private void btnExport_Click(object sender, EventArgs e)
         {
             if(dtgv.Rows.Count == 0)
@@ -207,7 +260,22 @@ namespace DemoDesign
             else
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
-                saveFile.FileName = $@"BaoCaoTinhHinhMuonSachTheoTheLoaiThang{dtp.Value.Month}";
+                string reportName = "";
+
+                switch (reportType)
+                {
+                    case ReportType.Book:
+                        reportName = "BaoCaoTheoSachMuonThang";
+                        break;
+                    case ReportType.BookType:
+                        reportName = "BaoCaoTheoTheLoaiThang";
+                        break;
+                    case ReportType.Reader:
+                        reportName = "BaoCaoTheoDocGiaThang";
+                        break;
+                }
+
+                saveFile.FileName = $@"{reportName}{dtp.Value.Month}";
                 saveFile.Filter = "Excel File|*.xlsx";
                 DialogResult dgResult = saveFile.ShowDialog();
                 if (dgResult == DialogResult.OK)
@@ -219,9 +287,8 @@ namespace DemoDesign
         }
         private void ToExcel(DataGridView dataGridView1, string fileName)
         {
-            string sheetName = "";
-            sheetName = "Báo cáo theo thể loại";
-            //khai báo thư viện hỗ trợ Microsoft.Office.Interop.Excel
+            string sheetName = $"BaoCaoThang{dtp.Value.Month}";
+            //Khai báo thư viện hỗ trợ Microsoft.Office.Interop.Excel
             Microsoft.Office.Interop.Excel.Application excel;
             Microsoft.Office.Interop.Excel.Workbook workbook;
             Microsoft.Office.Interop.Excel.Worksheet worksheet;
@@ -237,19 +304,31 @@ namespace DemoDesign
                 //đặt tên cho sheet
                 worksheet.Name = sheetName;
 
+                //Create header
+                Microsoft.Office.Interop.Excel.Range headerRange = worksheet.Range["A1", "D1"];
+                headerRange.Merge();
+                headerRange.Value = lbTitleName.Text;
+
+                //Center header text
+                headerRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                headerRange.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+
                 // export header trong DataGridView
                 for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 {
-                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+                    worksheet.Cells[2, i + 1] = dataGridView1.Columns[i].HeaderText;
                 }
                 // export nội dung trong DataGridView
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
                     for (int j = 0; j < dataGridView1.ColumnCount; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        worksheet.Cells[i + 3, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
                     }
                 }
+                // Autofit cho các cột
+                Microsoft.Office.Interop.Excel.Range columns = worksheet.UsedRange.Columns;
+                columns.AutoFit();
                 // sử dụng phương thức SaveAs() để lưu workbook với filename
                 workbook.SaveAs(fileName);
                 //đóng workbook
@@ -257,14 +336,163 @@ namespace DemoDesign
                 excel.Quit();
                 MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+                MessageBox.Show($"Có lỗi xảy ra!\nError: {ex.Data.ToString()}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 workbook = null;
                 worksheet = null;
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmbType.SelectedItem.ToString())
+            {
+                case "Thể loại":
+                    reportType = ReportType.BookType;
+                    break;
+                case "Sách":
+                    reportType = ReportType.Book;
+                    break;
+                case "Độc giả":
+                    reportType = ReportType.Reader;
+                    break;
+            }
+            ChangeDtgvLayout(reportType);
+            CreateReport();
+        }
+
+        private void CreateReport()
+        {
+            dtgv.Rows.Clear();
+            switch (cmbType.SelectedItem.ToString())
+            {
+                case "Thể loại":
+                    CategoryReport();
+                    break;
+                case "Sách":
+                    BookReport();
+                    break;
+                case "Độc giả":
+                    ReaderReport();
+                    break;
+            }
+        }
+
+        private void BookReport()
+        {
+            reportByBook.Clear();
+
+            /*string categoryReportCmd = $@"SELECT TenTheLoai, COUNT(THELOAI.MaTheLoai) AS 'So Luot Muon'
+                FROM THELOAI, CUONSACH, SACH, DAUSACH, PHIEUMUON, CTPHIEUMUON
+                WHERE CTPHIEUMUON.MaCuonSach = CUONSACH.MaCuonSach AND CUONSACH.MaSach = SACH.MaSach
+		                AND SACH.MaDauSach = DAUSACH.MaDauSach AND DAUSACH.MaTheLoai = THELOAI.MaTheLoai
+			                AND CTPHIEUMUON.MaPhieuMuonSach = PHIEUMUON.MaPhieuMuonSach
+				                AND MONTH(NgMuon) = {dtp.Value.Month.ToString()}
+                GROUP BY TenTheLoai, THELOAI.MaTheLoai
+                ORDER BY [So Luot Muon] DESC";*/
+            string bookReportCmd = $@"SELECT DAUSACH.MaDauSach, TenDauSach, COUNT(DAUSACH.MaDauSach) AS 'SO LUOT MUON'
+                FROM THELOAI, CUONSACH, SACH, DAUSACH, PHIEUMUON, CTPHIEUMUON
+                WHERE CTPHIEUMUON.MaCuonSach = CUONSACH.MaCuonSach AND CUONSACH.MaSach = SACH.MaSach
+		                AND SACH.MaDauSach = DAUSACH.MaDauSach AND DAUSACH.MaTheLoai = THELOAI.MaTheLoai
+			                AND CTPHIEUMUON.MaPhieuMuonSach = PHIEUMUON.MaPhieuMuonSach
+				                AND MONTH(NgMuon) = {dtp.Value.Month.ToString()}
+                GROUP BY DAUSACH.MaDauSach, TenDauSach
+                ORDER BY [So Luot Muon] DESC";
+
+            SqlConnection conn = new SqlConnection(DatabaseInfo.connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(bookReportCmd, conn);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    reportByBook.Add(new ReportByBook(reader.GetString(0), reader.GetString(1), reader.GetInt32(2)));
+                }
+            }
+            int stt = 1;
+            float totalNumOfBorrowings = 0;
+            foreach (ReportByBook report in reportByBook)
+            {
+                report.stt = stt;
+                totalNumOfBorrowings += report.numsOfBorrowings;
+                stt++;
+            }
+
+            lbTotalBorrow.Text = totalNumOfBorrowings.ToString();
+
+            binding = new BindingSource();
+            binding.DataSource = reportByBook;
+            dtgv.DataSource = binding;
+
+            if (dtgv.Rows.Count != 0)
+            {
+                dtgv.SelectedRows[0].Selected = false;
+                lbInform.Visible = false;
+            }
+            else
+            {
+                lbInform.Visible = true;
+                lbInform.Text = $"Không có quyển sách nào được mượn trong tháng {dtp.Value.Month}";
+                lbInform.Location = new Point((this.Width - lbInform.Width) / 2, lbInform.Location.Y);
+            }
+        }
+
+        private void ReaderReport()
+        {
+            reportByReader.Clear();
+
+            string readerReportCmd = $@"SELECT DOCGIA.MaDocGia, HoTen, COUNT(DOCGIA.MaDocGia) AS 'SO LUOT MUON'
+                FROM THELOAI, CUONSACH, SACH, DAUSACH, PHIEUMUON, CTPHIEUMUON, DOCGIA
+                WHERE CTPHIEUMUON.MaCuonSach = CUONSACH.MaCuonSach AND CUONSACH.MaSach = SACH.MaSach
+		                AND SACH.MaDauSach = DAUSACH.MaDauSach AND DAUSACH.MaTheLoai = THELOAI.MaTheLoai
+			                AND CTPHIEUMUON.MaPhieuMuonSach = PHIEUMUON.MaPhieuMuonSach AND PHIEUMUON.MaDocGia = DOCGIA.MaDocGia
+				                AND MONTH(NgMuon) = 11
+                GROUP BY DOCGIA.MaDocGia, HoTen
+                ORDER BY [So Luot Muon] DESC";
+            SqlConnection conn = new SqlConnection(DatabaseInfo.connectionString);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(readerReportCmd, conn);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    reportByReader.Add(new ReportByReader(reader.GetString(0), reader.GetString(1), reader.GetInt32(2)));
+                }
+            }
+            int stt = 1;
+            float totalNumOfBorrowings = 0;
+            foreach (ReportByReader report in reportByReader)
+            {
+                report.stt = stt;
+                totalNumOfBorrowings += report.numsOfBorrowings;
+                stt++;
+            }
+
+            lbTotalBorrow.Text = totalNumOfBorrowings.ToString();
+
+            binding = new BindingSource();
+            binding.DataSource = reportByReader;
+            dtgv.DataSource = binding;
+
+            if (dtgv.Rows.Count != 0)
+            {
+                dtgv.SelectedRows[0].Selected = false;
+                lbInform.Visible = false;
+            }
+            else
+            {
+                lbInform.Visible = true;
+                lbInform.Text = $"Không có quyển sách nào được mượn trong tháng {dtp.Value.Month}";
+                lbInform.Location = new Point((this.Width - lbInform.Width) / 2, lbInform.Location.Y);
             }
         }
     }

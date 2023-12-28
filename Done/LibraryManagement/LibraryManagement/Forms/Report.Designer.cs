@@ -43,6 +43,8 @@
             this.lbTitleName = new System.Windows.Forms.Label();
             this.lbTotalBorrow = new System.Windows.Forms.Label();
             this.lbInform = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.btnExport = new LibraryManagement.nButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.SuspendLayout();
@@ -146,22 +148,22 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.Navy;
-            this.lbTitle.Location = new System.Drawing.Point(495, 24);
+            this.lbTitle.Location = new System.Drawing.Point(495, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(322, 47);
+            this.lbTitle.Size = new System.Drawing.Size(269, 40);
             this.lbTitle.TabIndex = 49;
             this.lbTitle.Text = "Báo Cáo Thống Kê\r\n";
             // 
             // lbTotalBorrowTitle
             // 
             this.lbTotalBorrowTitle.AutoSize = true;
-            this.lbTotalBorrowTitle.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalBorrowTitle.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalBorrowTitle.ForeColor = System.Drawing.Color.Indigo;
-            this.lbTotalBorrowTitle.Location = new System.Drawing.Point(869, 672);
+            this.lbTotalBorrowTitle.Location = new System.Drawing.Point(979, 660);
             this.lbTotalBorrowTitle.Name = "lbTotalBorrowTitle";
-            this.lbTotalBorrowTitle.Size = new System.Drawing.Size(282, 33);
+            this.lbTotalBorrowTitle.Size = new System.Drawing.Size(199, 25);
             this.lbTotalBorrowTitle.TabIndex = 59;
             this.lbTotalBorrowTitle.Text = "Tổng số lượt mượn:";
             // 
@@ -169,7 +171,7 @@
             // 
             this.lbTitleName.AutoSize = true;
             this.lbTitleName.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold);
-            this.lbTitleName.ForeColor = System.Drawing.Color.Gold;
+            this.lbTitleName.ForeColor = System.Drawing.Color.Navy;
             this.lbTitleName.Location = new System.Drawing.Point(285, 184);
             this.lbTitleName.Name = "lbTitleName";
             this.lbTitleName.Size = new System.Drawing.Size(670, 35);
@@ -179,11 +181,11 @@
             // lbTotalBorrow
             // 
             this.lbTotalBorrow.AutoSize = true;
-            this.lbTotalBorrow.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalBorrow.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalBorrow.ForeColor = System.Drawing.Color.Indigo;
-            this.lbTotalBorrow.Location = new System.Drawing.Point(1140, 672);
+            this.lbTotalBorrow.Location = new System.Drawing.Point(1169, 660);
             this.lbTotalBorrow.Name = "lbTotalBorrow";
-            this.lbTotalBorrow.Size = new System.Drawing.Size(49, 33);
+            this.lbTotalBorrow.Size = new System.Drawing.Size(34, 25);
             this.lbTotalBorrow.TabIndex = 61;
             this.lbTotalBorrow.Text = "12";
             // 
@@ -197,10 +199,34 @@
             this.lbInform.TabIndex = 65;
             this.lbInform.Text = "Không có";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(327, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 29);
+            this.label1.TabIndex = 66;
+            this.label1.Text = " Thể loại:";
+            // 
+            // cmbType
+            // 
+            this.cmbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Sách",
+            "Thể loại",
+            "Độc giả"});
+            this.cmbType.Location = new System.Drawing.Point(446, 103);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(142, 33);
+            this.cmbType.TabIndex = 68;
+            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
+            // 
             // btnExport
             // 
-            this.btnExport.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnExport.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.btnExport.BackColor = System.Drawing.Color.Navy;
+            this.btnExport.BackgroundColor = System.Drawing.Color.Navy;
             this.btnExport.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnExport.BorderRadius = 20;
             this.btnExport.BorderSize = 0;
@@ -208,9 +234,9 @@
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(1059, 92);
+            this.btnExport.Location = new System.Drawing.Point(1096, 99);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(134, 49);
+            this.btnExport.Size = new System.Drawing.Size(130, 49);
             this.btnExport.TabIndex = 64;
             this.btnExport.Text = "Xuất báo cáo";
             this.btnExport.TextColor = System.Drawing.Color.White;
@@ -223,6 +249,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1260, 724);
+            this.Controls.Add(this.cmbType);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbInform);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.lbTotalBorrow);
@@ -258,5 +286,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lendCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn rate;
         private System.Windows.Forms.Label lbInform;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbType;
     }
 }
