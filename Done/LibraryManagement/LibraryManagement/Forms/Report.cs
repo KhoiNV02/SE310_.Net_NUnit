@@ -37,6 +37,20 @@ namespace DemoDesign
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             lbInform.Visible = false;
+            switch (cmbType.SelectedItem.ToString())
+            {
+                case "Thể loại":
+                    reportType = ReportType.BookType;
+                    break;
+                case "Sách":
+                    reportType = ReportType.Book;
+                    break;
+                case "Độc giả":
+                    reportType = ReportType.Reader;
+                    break;
+            }
+            ChangeDtgvLayout(reportType);
+            CreateReport();
         }
 
         private void Report_Load(object sender, EventArgs e)
@@ -308,10 +322,20 @@ namespace DemoDesign
                 Microsoft.Office.Interop.Excel.Range headerRange = worksheet.Range["A1", "D1"];
                 headerRange.Merge();
                 headerRange.Value = lbTitleName.Text;
-
+                headerRange.Font.Size = 18;
+                headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGreen);
                 //Center header text
                 headerRange.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                 headerRange.VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+                Microsoft.Office.Interop.Excel.Range contentRange = worksheet.Range["A2", $"D{dataGridView1.RowCount + 2}"]; // A2 đến D(n + 2)
+                contentRange.Font.Size = 14;
+
+                headerRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                headerRange.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
+
+                // Vẽ border cho mọi cell trong contentRange
+                contentRange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                contentRange.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
 
                 // export header trong DataGridView
                 for (int i = 0; i < dataGridView1.ColumnCount; i++)
@@ -350,6 +374,33 @@ namespace DemoDesign
         private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        public bool CreateReportFile(int month, int year, string fileName)
+        {
+            if (dtgv.Rows.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                string reportName = "";
+
+                switch (reportType)
+                {
+                    case ReportType.Book:
+                        reportName = "BaoCaoTheoSachMuonThang";
+                        break;
+                    case ReportType.BookType:
+                        reportName = "BaoCaoTheoTheLoaiThang";
+                        break;
+                    case ReportType.Reader:
+                        reportName = "BaoCaoTheoDocGiaThang";
+                        break;
+                }
+                //ToExcel(dtgv, fileName);
+            }
+            return true;
         }
 
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)

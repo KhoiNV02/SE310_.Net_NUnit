@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DOBValidationTest.cs" />
     <Compile Include="ManageReaderTest.cs" />
+    <Compile Include="ReportTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
