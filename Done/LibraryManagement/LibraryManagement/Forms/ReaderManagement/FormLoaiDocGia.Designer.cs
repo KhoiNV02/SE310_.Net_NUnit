@@ -1,7 +1,7 @@
 ﻿
 namespace FormLoaiDocGia
 {
-    partial class Form1
+    partial class FormLoaiDocGia
     {
         /// <summary>
         /// Required designer variable.

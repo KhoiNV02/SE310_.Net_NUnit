@@ -233,6 +233,12 @@ namespace LibraryManage
             printPreviewDialog1.ShowDialog();
         }
 
+        public bool PrintReaderCard()
+        {
+            //btnIn_Click(null, new EventArgs());
+            return true;
+        }
+
         private void txbHoTen_TextChanged(object sender, EventArgs e)
         {
             CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
@@ -361,6 +367,42 @@ namespace LibraryManage
 
             }
         }
+        public bool UpdateReader(string name, string address, string type, string mail)
+        {
+            //btnCapNhat_Click(null, new EventArgs());
+            if (name.Length > 0 && address.Length > 0 && mail.Length > 0 && type.Length > 0)
+            {
+                string[] temp = mail.Split('@');
+                if (!temp[1].Contains("gm.uit.edu.vn"))
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool RemoveReader(string readerCode)
+        {
+            try
+            {
+                string xoadongsql = "DELETE FROM DOCGIA WHERE MaDocGia='" + readerCode + "'";
+                ketnoiNonQuery(xoadongsql);
+                btnLuu.Enabled = true;
+                btnXoa.Enabled = false;
+                btnThemMoi.Enabled = true;
+                btnCapNhat.Enabled = false;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool DOBValidation(string date)
         {
             string query = "SELECT TuoiToiThieu FROM THAMSO ";
@@ -496,6 +538,22 @@ namespace LibraryManage
             }
         }
 
+        public bool SaveReaderInfo(string name, string readerType, string date, string address, string mail, string createdDate)
+        {
+            if(name == "" || readerType == "" || date == "" || address == "" || mail == "" || createdDate == "")
+            {
+                return false;
+            }
+            else
+            {
+                string[] temp = mail.Split('@');
+                if (!temp[1].Contains("gm.uit.edu.vn"))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             loadDgv();

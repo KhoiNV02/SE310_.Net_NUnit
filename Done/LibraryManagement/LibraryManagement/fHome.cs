@@ -397,7 +397,7 @@ namespace LibraryManagement
 
         private void loạiĐộcGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SwitchForm(new FormLoaiDocGia.Form1());
+            SwitchForm(new FormLoaiDocGia.FormLoaiDocGia());
         }
 
         private void phiếuToolStripMenuItem_Click(object sender, EventArgs e)

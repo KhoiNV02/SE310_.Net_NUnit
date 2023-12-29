@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace FormLoaiDocGia
 {
-    public partial class Form1 : Form
+    public partial class FormLoaiDocGia : Form
     {
         // Khai báo 
         string chuoiKetNoi = $@"{LibraryManagement.Models.DatabaseInfo.connectionString}";
@@ -19,7 +19,7 @@ namespace FormLoaiDocGia
         private SqlDataAdapter myDataAdapter;   // Vận chuyển csdl qa DataSet
         private DataTable myTable;  // Dùng để lưu bảng lấy từ c#
         SqlCommand myCommand;   // Thực hiện cách lệnh truy vấn
-        public Form1()
+        public FormLoaiDocGia()
         {
             InitializeComponent();
         }
@@ -162,6 +162,126 @@ namespace FormLoaiDocGia
                 MessageBox.Show("Tên loại độc giả này đã có, bạn không thể lưu mới");
         }
 
+        public bool AddNewReaderType(string newType)
+        {
+            int ck = 0;
+            for (int i = 0; i < dgvLoaiDocGia.RowCount; i++)
+            {
+                if (newType.ToUpper() == dgvLoaiDocGia.Rows[i].Cells[1].Value.ToString().ToUpper())
+                {
+                    ck = 1;
+                }
+            }
+            if (ck == 0)
+            {
+                xuly = 0;
+                {
+                    if (newType == "")
+                    {
+                        errTenLDG.SetError(txbTenLoaiDocGia, "Vui lòng nhập Tên DG");
+                    }
+                    else
+                    {
+                        errTenLDG.Clear();
+                    }
+
+                }
+
+                if (newType.Length > 0)
+                {
+                    string query = null;
+                    if (xuly == 0)
+                    {
+                        try
+                        {
+
+                            string themdongsql = "INSERT INTO LOAIDOCGIA(TenLoaiDocGia)" +
+                            "VALUES (N'" + newType + "')";
+                            ketnoiNonQuery(themdongsql);
+                            return true;
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                        query = "SELECT TOP 1 MaLoaiDocGia FROM LOAIDOCGIA ORDER BY MaLoaiDocGia DESC ";
+                        ketnoi(query);
+                        txbMaLoaiDocGia.Text = Convert.ToString(myCommand.ExecuteScalar());
+                    }
+
+                    dgvLoaiDocGia.AutoGenerateColumns = false;
+                    myConnection.Close();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool UpdateReaderType(string code, string name)
+        {
+            int ck = 0;
+            for (int i = 0; i < dgvLoaiDocGia.RowCount; i++)
+            {
+
+                if (name.ToUpper() == dgvLoaiDocGia.Rows[i].Cells[1].Value.ToString().ToUpper())
+                {
+                    ck = 1;
+                }
+            }
+            if (ck == 0)
+            {
+                xuly = 1;
+                {
+                    if (name == "")
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        
+                    }
+
+                }
+
+                if (name.Length > 0)
+                {
+                    if (xuly == 1)
+                    {
+                        try
+                        {
+                            string capnhatdongsql;
+                            capnhatdongsql = "UPDATE LOAIDOCGIA " +
+                                "SET TenLoaiDocGia = N'" + name + "'" +
+                                "WHERE MaLoaiDocGia = '" + code + "'";
+                            ketnoi(capnhatdongsql);
+                            myCommand.ExecuteNonQuery();
+                            return true;
+                        }
+                        catch
+                        {
+                            return false;
+                        }
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             int ck = 0;
@@ -255,6 +375,21 @@ namespace FormLoaiDocGia
         {
             xoaLoaiDG();
             errTenLDG.Clear();
+        }
+
+        public bool RemoveReaderType(string code)
+        {
+            try
+            {
+                string xoadongsql = "DELETE FROM LOAIDOCGIA WHERE MaLoaiDocGia='" + code + "'";
+                ketnoiNonQuery(xoadongsql);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         private void dgvLoaiDocGia_CellClick(object sender, DataGridViewCellEventArgs e)

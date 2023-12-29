@@ -358,7 +358,6 @@ C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\Libra
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.DetailReturnCard.resources
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\ThayDoiQuyDinh.FormThayDoiQuyDinh.resources
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\TraCuuSach.FormTraCuu.resources
-C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormLoaiDocGia.Form1.resources
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\PhieuThuTien.FormThuTien.resources
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManage.Form1.resources
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\DemoDesign.Report.resources
@@ -369,3 +368,4 @@ C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\Libra
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CopyComplete
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
 C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb
+C:\Users\trung\OneDrive\Máy tính\SE310_.Net_NUnit\Done\LibraryManagement\LibraryManagement\obj\Debug\FormLoaiDocGia.FormLoaiDocGia.resources
